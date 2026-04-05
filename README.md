@@ -23,7 +23,7 @@ DailyAccount is a lightweight daily expense tracker with an intuitive interface 
 ### Chart Analysis
 - Group data by **Category**, **Purpose**, or **Payment Method**
 - Filter by specific account types before analysis
-- Supported chart types: 🥧 Pie Chart / 📈 Line Chart / 📊 Stacked Bar Chart
+- Supported chart types:  Pie Chart / Line Chart /  Stacked Bar Chart
 
 ---
 
@@ -216,7 +216,7 @@ This design follows the **Dependency Injection** principle, decoupling the repos
 
 ---
 
-## 🐛 Known Issues & Improvements
+##  Known Issues & Improvements
 
 ###  High Priority
 - **Presenter coupling** — `AnalysisPresenter` and `NotePresenter` instantiate `CSVRepository` directly in their constructors. Recommend refactoring to constructor injection with `IRepository`.
