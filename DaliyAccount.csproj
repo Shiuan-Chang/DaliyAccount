@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6EB12FE9-A2C6-4B0D-9144-7439545EEF5F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DailyAccount</RootNamespace>
+    <AssemblyName>DailyAccount</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CSVHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CSVHelper\CSVHelper\CSVHelper\bin\Debug\CSVHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalysisChart\StackedBarChart.cs" />
+    <Compile Include="AnalysisChart\LineChart.cs" />
+    <Compile Include="AnalysisChart\PieChart.cs" />
+    <Compile Include="Components\NavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\NavBar.Designer.cs">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contract\IAccountPresenter.cs" />
+    <Compile Include="Contract\IAccountView.cs" />
+    <Compile Include="Contract\IAddPresenter.cs" />
+    <Compile Include="Contract\IAddView.cs" />
+    <Compile Include="Contract\IAnalysisView.cs" />
+    <Compile Include="Contract\INotePresenter.cs" />
+    <Compile Include="Contract\INoteView.cs" />
+    <Compile Include="Contract\IAnalysisPresenter.cs" />
+    <Compile Include="DataGridViewExtension\DataGridViewExtension.cs" />
+    <Compile Include="DebounceExtension.cs" />
+    <Compile Include="Forms\AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForm.Designer.cs">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AnalysisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnalysisForm.Designer.cs">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageForm.Designer.cs">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NoteForm.Designer.cs">
+      <DependentUpon>NoteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SingletonForm .cs" />
+    <Compile Include="Mappings\AddFormProfile.cs" />
+    <Compile Include="Models\AccountingModel.cs" />
+    <Compile Include="Models\AccountRawDataDAO.cs" />
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\AddFormRawDataDAO.cs" />
+    <Compile Include="Models\AddFormRawDataDTO.cs" />
+    <Compile Include="Models\AddModel.cs" />
+    <Compile Include="Models\AnalysisModel.cs" />
+    <Compile Include="Models\AnalysisRawDataDAO.cs" />
+    <Compile Include="Models\DeleteAnalysisModel.cs" />
+    <Compile Include="Models\DeleteNoteModel.cs" />
+    <Compile Include="Models\DropDownModel.cs" />
+    <Compile Include="Models\FormType.cs" />
+    <Compile Include="Models\GroupbyModel.cs" />
+    <Compile Include="Models\GroupingData.cs" />
+    <Compile Include="Models\NoteModel.cs" />
+    <Compile Include="Models\NotFormRawDataDAO.cs" />
+    <Compile Include="Models\NotFormRawDataDTO.cs" />
+    <Compile Include="Models\PieChartModel.cs" />
+    <Compile Include="Models\RawData.cs" />
+    <Compile Include="Models\UpdateAnalysisModel.cs" />
+    <Compile Include="Models\UpdateNoteModel.cs" />
+    <Compile Include="Presenters\AccountPresenter.cs" />
+    <Compile Include="Presenters\AddPresenter.cs" />
+    <Compile Include="Presenters\AnalysisPresenter.cs" />
+    <Compile Include="Presenters\NotePresenter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CSVRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="Utility\Builder\ChartBuilder.cs" />
+    <Compile Include="Utility\Builder\Interface\IChartBuilder.cs" />
+    <Compile Include="Utility\ImageCompressionUtility.cs" />
+    <Compile Include="Utility\SaveImage.cs" />
+    <Compile Include="Utility\Strategy\ChartStrategy\LineChartStrategy.cs" />
+    <Compile Include="Utility\Strategy\ChartStrategy\PieChartStrategy.cs" />
+    <Compile Include="Utility\Strategy\ChartStrategy\StackedChartStrategy.cs" />
+    <Compile Include="Utility\Strategy\GroupingStrategyFactory.cs" />
+    <Compile Include="Utility\Strategy\GroupStrategy\LineChartGroupingStrategy.cs" />
+    <Compile Include="Utility\Strategy\Interface\ICreateChartStrategy.cs" />
+    <Compile Include="Utility\Strategy\Interface\ICreateSeriesStrategy.cs" />
+    <Compile Include="Utility\Strategy\Interface\IGroupingStrategy.cs" />
+    <Compile Include="Utility\Strategy\GroupStrategy\PieChartGroupingStrategy.cs" />
+    <Compile Include="Utility\Strategy\GroupStrategy\StackedChartGroupingStrategy.cs" />
+    <Compile Include="Utility\Strategy\SeriesStrategy\LineChartSeries.cs" />
+    <Compile Include="Utility\Strategy\SeriesStrategy\PieChartSeries.cs" />
+    <Compile Include="Utility\Strategy\SeriesStrategy\StackedChartSeries.cs" />
+    <EmbeddedResource Include="Components\NavBar.resx">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForm.resx">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnalysisForm.resx">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageForm.resx">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NoteForm.resx">
+      <DependentUpon>NoteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CSV transform\ImageSave\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\Junk.png" />
+    <Content Include="Resources\Images\AccountForm.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\AddForm.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\AnalysisForm.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\NoteForm.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\SettingForm.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\upload.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
